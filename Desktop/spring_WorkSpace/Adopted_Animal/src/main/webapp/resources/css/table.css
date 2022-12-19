@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/* in SignUp.jsp */
+.user-signup{
+	font-size: 32px;
+}
+#insert-result1{
+	font-size: 24px;
+	background-color: pink;
+}
+#insert-result2{
+	font-size: 24px;
+	background-color: pink;
+}

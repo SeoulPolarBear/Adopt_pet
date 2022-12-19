@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.polarbear.lim.dao.interfaces.customerMapper">
+<!-- Read -->
+<select id = "getCustomerById" resultType="com.polarbear.lim.dto.Customer" parameterType="com.polarbear.lim.dto.User">
+	select * from adopt_Customer where customer_u_id = #{user_id}
+</select>
+</mapper>

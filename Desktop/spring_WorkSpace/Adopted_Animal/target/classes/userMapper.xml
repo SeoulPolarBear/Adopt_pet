@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.polarbear.lim.dao.interfaces.UserMapper">
+<!-- Read -->
+<select id = "getAllUser" resultType="com.polarbear.lim.dto.User">
+	select * from adopt_user order by user_id
+</select>
+
+<select id = "getUserById" parameterType="com.polarbear.lim.dto.User" resultType="com.polarbear.lim.dto.User">
+	select * from adopt_user where user_id = #{user_id}
+</select>
+
+<!-- Create -->
+<insert id = "InsertUser" parameterType="com.polarbear.lim.dto.User">
+	insert into adopt_user values(#{user_id},#{user_password},#{user_email},#{user_name},
+	#{user_birthday},#{user_phonenum},#{user_address_postnum},#{user_address_distance},
+	#{user_address_detail},#{user_thumbnail},#{user_star})
+</insert>
+
+<!-- Delete -->
+<delete id = "DeleteUser" parameterType="com.polarbear.lim.dto.User">
+	delete from adopt_user where user_id = #{user_id}
+</delete>
+</mapper>
+
+

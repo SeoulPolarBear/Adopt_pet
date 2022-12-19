@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+body{
+	background-color: #FEEBFE;
+}
+
+#adopt-title{
+	text-shadow: 3px 3px 6px #27ADE7;
+	font-size : 24pt;
+}
+
+.adopt-content{
+	font-size : 16pt;
+}

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/* in SignUp.jsp */
+.outer{
+	display: flex;
+	justify-content: center;
+}
+
+.Reg-animal{
+	position: relative;
+	font-size: 32px;
+}
+.list-title{
+	position:absolute;
+	left:100px;
+	top:0px;
+	font-size: 24px;
+	background-color: pink;
+}
+#list-reg{
+	position:absolute;
+	right:100px;
+	top:0px;
+	font-size: 24px;
+	background-color: pink;
+}

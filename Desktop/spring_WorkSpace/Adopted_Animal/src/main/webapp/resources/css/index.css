@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.contents{
+	text-align: center;
+	margin: auto;
+	display: block;
+}
+
+.introduce{
+	margin: 0 auto;
+	background-color: #DBC5D9;
+	font-size: 32px;
+	text-shadow: 5px 5px 5px #DF7BDB;
+}
+
+.title-kind{
+	margin: auto;
+	width: 1200px;
+	height: 900px; 
+}
+
+

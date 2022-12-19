@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.polarbear.lim.dao.interfaces.KindMapper">
+<!-- Read -->
+<select id = "getAllKind" resultType="com.polarbear.lim.dto.Kind">
+	select * from adopt_kind order by kind_sepcies, kind_kind
+</select>
+
+<select id = "getAllSpecies" resultType="com.polarbear.lim.dto.Kind">
+	select distinct kind_sepcies from adopt_kind order by kind_sepcies
+</select>
+
+<select id = "getKindById" resultType="com.polarbear.lim.dto.Kind" parameterType="com.polarbear.lim.dto.Animal">
+	select * from adopt_kind where kind_a_id = #{animal_id}
+</select>
+
+<!-- Create -->
+<insert id = "InsertKind" parameterType="com.polarbear.lim.dto.Kind">
+	insert into adopt_kind values(#{kind_kind},#{kind_sepcies},#{kind_a_id})
+</insert>
+</mapper>

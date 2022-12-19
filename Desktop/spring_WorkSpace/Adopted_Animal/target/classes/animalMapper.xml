@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.polarbear.lim.dao.interfaces.AnimalMapper">
+<!-- Read -->
+<select id = "getAllAnimal" resultType="com.polarbear.lim.dto.Animal">
+	select * from adopt_animal order by animal_id desc
+</select>
+
+<select id = "getUserAnimal" parameterType="com.polarbear.lim.dto.User" resultType="com.polarbear.lim.dto.Animal">
+	select * from adopt_animal 
+	where animal_u_id = #{user_id}
+</select>
+
+<select id = "getUserAnimalbyId" parameterType="com.polarbear.lim.dto.User" resultType="decimal">
+	select max(animal_id) from adopt_animal 
+	where animal_u_id = #{user_id}
+</select>
+
+<select id = "getDogAnimal" resultType="com.polarbear.lim.dto.Animal">
+	select * from adopt_animal 
+	where animal_id in (
+		select kind_a_id from adopt_kind 
+		where kind_sepcies = 'dogs')
+	order by animal_id desc
+</select>
+
+<select id = "getCatAnimal" resultType="com.polarbear.lim.dto.Animal">
+	select * from adopt_animal 
+	where animal_id in (
+		select kind_a_id from adopt_kind 
+		where kind_sepcies = 'cats')
+	order by animal_id desc
+</select>
+
+<select id = "getTurtleAnimal" resultType="com.polarbear.lim.dto.Animal">
+	select * from adopt_animal 
+	where animal_id in (
+		select kind_a_id from adopt_kind 
+		where kind_sepcies = 'turtles')
+	order by animal_id desc
+</select>
+
+<select id = "getRodentAnimal" resultType="com.polarbear.lim.dto.Animal">
+	select * from adopt_animal 
+	where animal_id in (
+		select kind_a_id from adopt_kind 
+		where kind_sepcies = 'rodents')
+	order by animal_id desc
+</select>
+
+<select id = "getFoxAnimal" resultType="com.polarbear.lim.dto.Animal">
+	select * from adopt_animal 
+	where animal_id in (
+		select kind_a_id from adopt_kind 
+		where kind_sepcies = 'foxes')
+	order by animal_id desc
+</select>
+
+<!-- Create -->
+<insert id="RegAnimal" parameterType="com.polarbear.lim.dto.Animal">
+	insert into adopt_animal values(adopt_animal_seq.nextval,#{animal_u_id},#{animal_name},#{animal_age},#{animal_gender},#{animal_thumbnail},#{animal_registration},#{animal_description})
+</insert>
+
+<!-- Delete -->
+<insert id="adoptAnimal" parameterType="com.polarbear.lim.dto.Animal">
+	Delete from adopt_animal where animal_u_id = #{animal_u_id} and animal_name = #{animal_name}
+</insert>
+</mapper>
